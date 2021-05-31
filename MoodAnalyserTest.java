@@ -1,27 +1,19 @@
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+import customException.MoodAnalayser;
+import customException.MoodAnalyserException;
 
+class MoodAnalyserTest {
 
-class MoodAnalyserExceptionTest {
-
-    @Test
-    public void givenMessage_WhenSad_ShouldReturnSad(){
-            MoodAnalyserException moodAnalyser = new MoodAnalyserException("SAD");
-            String mood = moodAnalyser.analyseMood("This is a Sad Message");
-            Assertions.assertEquals("SAD", mood);
-    }
-
-    @Test
-    public void givenMessage_WhenNotSad_ShouldReturnHappy() {
-        MoodAnalyserException moodAnalyser = new MoodAnalyserException("HAPPY");
-        String mood = moodAnalyser.analyseMood("This is a HAPPY Message");
-        Assertions.assertEquals("HAPPY", mood);
-    }
-    @Test
-    public void givenMessage_WhenNotSad_ShouldReturnHappy1() {
-        MoodAnalyserException moodAnalyser = new MoodAnalyserException(null);
-        String mood = moodAnalyser.analyseMood("This is a null Message");
-        Assertions.assertEquals("HAPPY", mood);
-    }
+	@Test
+	 public void giveNullMoodShouldThrowException() {
+     MoodAnalayser moodAnalyser = new MoodAnalayser();
+		try {
+       moodAnalyser.analyserMood(null);
+     } catch (MoodAnalyserException e) {
+		Assert.assertEquals("Enter proper mood", moodAnalyser);
+	}
+	}
 }

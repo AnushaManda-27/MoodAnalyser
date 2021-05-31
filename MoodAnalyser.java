@@ -1,23 +1,28 @@
 public class MoodAnalyser {
-    String message;
-    public MoodAnalyserException(String message) {
-        this.message = message;
-    }
 
-    public String analyseMood(String message) {
-        this.message = message;
-        return analyseMood();
-    }
-    public String analyseMood() {
-        try {
-            if(message.contains("Sad")) {
-                return "SAD";
-            }
-            else
-                return "HAPPY";
-        }
-        catch (NullPointerException e){
-            return "HAPPY";
-        }
-    }
+private String message;
+
+	public String  analyserMood(String message)throws MoodAnalyserException { 
+		return this.message = message;
+		// TODO Auto-generated method stub
+	}
+	
+	 void analyserMood() {
+		this.message = message;
+	}
+public String MoodAnalyser() throws MoodAnalyserException {
+		try {
+		if (message.contains("sad"))
+			if (message.contains("sad"))
+			return "SAD";
+		else
+			return "Happy";
+		}catch (NullPointerException e) {
+		
+	throw new MoodAnalyserException("Enter your proper mood");
+	}
+		return "Happy";
+	
 }
+	
+	}
